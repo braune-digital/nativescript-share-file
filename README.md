@@ -2,9 +2,10 @@
 
 Send/Share files to other apps. 
 
-Android Intent:
+Android Intent, IOS InteractionController:
 
-IOS InteractionController:
+<img src="https://github.com/braune-digital/nativescript-share-file/blob/master/preview/preview-android.png?raw=true" width="250"> .   <img src="https://github.com/braune-digital/nativescript-share-file/blob/master/preview/preview-ios.png?raw=true" width="250">
+
 
 
 ## Installation
