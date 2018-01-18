@@ -6,7 +6,7 @@ export class HelloWorldModel extends Observable {
   public message: string;
   private shareFile: ShareFile;
   public documents: any;
-  public fileName = '/test.pdf';
+  public fileName = '/test.txt'; // for testing use '/test.pdf' or '/test.txt'
 
   constructor() {
     super();
