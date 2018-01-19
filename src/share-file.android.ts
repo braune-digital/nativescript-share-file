@@ -1,13 +1,7 @@
-import { Common } from './share-file.common';
 import * as application from 'tns-core-modules/application';
 import * as fs from 'tns-core-modules/file-system';
 
-export class ShareFile extends Common {
-
-    constructor() {
-        super();
-    }
-
+export class ShareFile {
     open(args: any): void {
       if (args.path) {
         try {
@@ -37,7 +31,6 @@ export class ShareFile extends Common {
       } else {
         console.log('ShareFile: Please add a file path');
       }
-
 
     }
 

@@ -3,7 +3,6 @@ import { ShareFile } from 'nativescript-share-file';
 import * as fs from 'tns-core-modules/file-system';
 
 export class HelloWorldModel extends Observable {
-  public message: string;
   private shareFile: ShareFile;
   public documents: any;
   public fileName = '/test.txt'; // for testing use '/test.pdf' or '/test.txt'
@@ -12,7 +11,6 @@ export class HelloWorldModel extends Observable {
     super();
     this.documents = fs.knownFolders.currentApp();
     this.shareFile = new ShareFile();
-    this.message = this.shareFile.message;
     setTimeout(() => {
       this.shareFile.open({ path: this.documents.path + this.fileName, intentTitle: 'Open text file with:'});
     }, 3000);

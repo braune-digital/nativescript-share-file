@@ -1,5 +1,3 @@
-import { Common } from './share-file.common';
-export declare class ShareFile extends Common {
-    constructor();
+export declare class ShareFile{
     open(args): boolean;
 }

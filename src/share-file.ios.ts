@@ -1,10 +1,6 @@
-import { Common } from './share-file.common';
 
-export class ShareFile extends Common {
 
-    constructor() {
-        super();
-    }
+export class ShareFile {
 
     static getter<T>(_this2: any, property: T | { (): T }): T {
         if (typeof property === "function") {
