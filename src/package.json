@@ -4,6 +4,7 @@
     "description": "Send/share file to other apps.",
     "main": "share-file",
     "typings": "index.d.ts",
+    "repository": "braune-digital/nativescript-share-file",
     "nativescript": {
         "platforms": {
             "android": "3.0.0",
