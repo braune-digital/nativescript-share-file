@@ -1,4 +1,4 @@
-# Bativescript Share File
+# Nativescript Share File
 
 Send/Share files to other apps. 
 
