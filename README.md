@@ -10,7 +10,11 @@ Android Intent, IOS InteractionController:
 
 ## Installation
 
-- soon on npm
+Install the plugin in your app
+
+~~~
+npm install nativescript-share-file
+~~~
 
 ## Usage 
 
@@ -29,9 +33,11 @@ Android Intent, IOS InteractionController:
 
             this.documents = fs.knownFolders.currentApp();
             this.shareFile = new ShareFile();
-            setTimeout(() => {
-                this.shareFile.open(this.documents.path + this.fileName);
-            }, 3000);
+            this.shareFile.open(
+                { 
+                    path: this.documents.path + this.fileName, 
+                    intentTitle: 'Open text file with:' // for Android only
+                });
         }
     }
 
