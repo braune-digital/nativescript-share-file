@@ -1,4 +1,4 @@
-# nativescript-share-file
+# Bativescript Share File
 
 Send/Share files to other apps. 
 
@@ -19,7 +19,7 @@ npm install nativescript-share-file
 ## Usage 
 
 	
-```javascript
+```TypeScript
     import { ShareFile } from 'nativescript-share-file';
     import * as fs from 'tns-core-modules/file-system';
 
