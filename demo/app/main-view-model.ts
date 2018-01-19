@@ -14,7 +14,7 @@ export class HelloWorldModel extends Observable {
     this.shareFile = new ShareFile();
     this.message = this.shareFile.message;
     setTimeout(() => {
-      this.shareFile.open(this.documents.path + this.fileName);
+      this.shareFile.open({ path: this.documents.path + this.fileName, intentTitle: 'Open text file with:'});
     }, 3000);
   }
 }

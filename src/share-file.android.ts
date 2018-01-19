@@ -8,31 +8,36 @@ export class ShareFile extends Common {
         super();
     }
 
-    open(path): void {
+    open(args: any): void {
+      if (args.path) {
         try {
-            let intent = new android.content.Intent();
-            let map = android.webkit.MimeTypeMap.getSingleton();
-            let mimeType = map.getMimeTypeFromExtension(this.fileExtension(path));
+          let intent = new android.content.Intent();
+          let map = android.webkit.MimeTypeMap.getSingleton();
+          let mimeType = map.getMimeTypeFromExtension(this.fileExtension(args.path));
 
-            intent.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
+          intent.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            let uris = new java.util.ArrayList();
-            let uri = this._getUriForPath(path, '/' + this.fileName(path), application.android.context);
-            uris.add(uri);
-            let builder = new android.os.StrictMode.VmPolicy.Builder();
-            android.os.StrictMode.setVmPolicy(builder.build());
+          let uris = new java.util.ArrayList();
+          let uri = this._getUriForPath(args.path, '/' + this.fileName(args.path), application.android.context);
+          uris.add(uri);
+          let builder = new android.os.StrictMode.VmPolicy.Builder();
+          android.os.StrictMode.setVmPolicy(builder.build());
 
-            intent.setAction(android.content.Intent.ACTION_SEND);
-            intent.setType(mimeType);
-            intent.putParcelableArrayListExtra(android.content.Intent.EXTRA_STREAM, uris);
+          intent.setAction(android.content.Intent.ACTION_SEND);
+          intent.setType(mimeType);
+          intent.putParcelableArrayListExtra(android.content.Intent.EXTRA_STREAM, uris);
 
 
-            application.android.currentContext.startActivity(android.content.Intent.createChooser(intent, "Open " + mimeType));
+          application.android.currentContext.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
 
         }
         catch (e) {
-            console.log("Android intent failed");
+            console.log('ShareFile: Android intent failed');
         }
+      } else {
+        console.log('ShareFile: Please add a file path');
+      }
+
 
     }
 

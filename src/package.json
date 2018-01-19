@@ -30,6 +30,8 @@
         "NativeScript",
         "JavaScript",
         "Android",
+        "file",
+        "share",
         "iOS"
     ],
     "author": {
@@ -37,10 +39,10 @@
         "email": "lb@braune-digital.com"
     },
     "bugs": {
-        "url": "https://github.com/LeonBorlinghaus/nativescript-share-file/issues"
+        "url": "https://github.com/braune-digital/nativescript-share-file/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/LeonBorlinghaus/nativescript-share-file",
+    "homepage": "https://github.com/braune-digital/nativescript-share-file",
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "^3.1.0",

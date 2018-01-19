@@ -14,21 +14,25 @@ export class ShareFile extends Common {
         }
     }
 
-    open(filePath: string): boolean {
-        try {
-            const appPath = this.getCurrentAppPath();
-            const path = filePath.replace("~", appPath);
+    open(args: any): boolean {
+        if (args.path) {
+            try {
+                const appPath = this.getCurrentAppPath();
+                const path = args.path.replace("~", appPath);
 
-            const controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
-            controller.delegate = new UIDocumentInteractionControllerDelegateImpl();
-            return controller.presentOptionsMenuFromRectInViewAnimated(
-                controller.delegate.documentInteractionControllerRectForPreview(controller),
-                controller.delegate.documentInteractionControllerViewForPreview(controller),
-                true
-            );
-        }
-        catch (e) {
-            console.log("Error in openFile");
+                const controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
+                controller.delegate = new UIDocumentInteractionControllerDelegateImpl2();
+                return controller.presentOptionsMenuFromRectInViewAnimated(
+                    controller.delegate.documentInteractionControllerRectForPreview(controller),
+                    controller.delegate.documentInteractionControllerViewForPreview(controller),
+                    true
+                );
+            }
+            catch (e) {
+                console.log("ShareFile: Open file failed");
+            }
+        } else {
+            console.log('ShareFile: Please add a file path');
         }
         return false;
     }
@@ -47,7 +51,7 @@ export class ShareFile extends Common {
     }
 }
 
-class UIDocumentInteractionControllerDelegateImpl extends NSObject implements UIDocumentInteractionControllerDelegate {
+class UIDocumentInteractionControllerDelegateImpl2 extends NSObject implements UIDocumentInteractionControllerDelegate {
     public static ObjCProtocols = [UIDocumentInteractionControllerDelegate];
 
     public getViewController(): UIViewController {
