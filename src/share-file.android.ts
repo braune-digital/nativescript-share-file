@@ -98,7 +98,7 @@ export class ShareFile {
           console.log("Missing external cache dir");
           return null;
         }
-        let storage = dir.toString() + "/emailcomposer";
+        let storage = dir.toString() + "/filecomposer";
         let cacheFileName = storage + "/" + fileName;
         let toFile = fs.File.fromPath(cacheFileName);
         toFile.writeSync(contents, function(e) { console.log(e); });
@@ -110,7 +110,7 @@ export class ShareFile {
     _cleanAttachmentFolder() {
         if (application.android.context) {
           let dir = application.android.context.getExternalCacheDir();
-          let storage = dir.toString() + "/emailcomposer";
+          let storage = dir.toString() + "/filecomposer";
           let cacheFolder = fs.Folder.fromPath(storage);
           cacheFolder.clear();
         }

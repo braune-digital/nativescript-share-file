@@ -19,7 +19,7 @@ export class ShareFile {
                 const controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
                 controller.delegate = new UIDocumentInteractionControllerDelegateImpl2();
                 return controller.presentOptionsMenuFromRectInViewAnimated(
-                    controller.delegate.documentInteractionControllerRectForPreview(controller),
+                    CGRectMake(0, 0, 0, 0),
                     controller.delegate.documentInteractionControllerViewForPreview(controller),
                     true
                 );
@@ -63,8 +63,5 @@ class UIDocumentInteractionControllerDelegateImpl2 extends NSObject implements U
         return this.getViewController().view;
     }
 
-    public documentInteractionControllerRectForPreview(controller: UIDocumentInteractionController): CGRect {
-        return this.getViewController().view.frame;
-    }
 }
 
