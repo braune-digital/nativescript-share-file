@@ -60,12 +60,33 @@ Info: Shared files should be in the `documents` path. Android is not stable yet.
 
 ### Arguments
 
-`path`: Path to the file which should be shared.
+#### path
+Path to file.
 
-`intentTitle`: (Optional) Title for the intent on Android. Default: `Open file:`.
+`String`: Required
+Path to the file which should be shared.
 
-`rect`: (Optional) Positioning the view fpr iPads. On iPhones its always shown on the bottom. Default: `{x: 0, y: 0, width: 0, height: 0 }`.
+#### intentTitle
+Title for the intent on Android. 
 
-`options`: (Optional) Show additional opening options for iOS devices. Default: `false`.
+`String`: (Optional) 
+Default: `Open file:`.
 
-`animated`: (Optional) Opening animation fpr iOS devices. Default: `false`.
+
+#### rect
+Positioning the view fpr iPads. On iPhones its always shown on the bottom. 
+
+`Object`: (Optional) 
+Default: `{x: 0, y: 0, width: 0, height: 0 }`.
+
+#### options
+Show additional opening options for iOS devices. 
+
+`Boolean`: (Optional)
+Default: `false`.
+
+#### animated
+Opening animation fpr iOS devices. 
+
+`Boolean`: (Optional) 
+Default: `false`.
