@@ -40,19 +40,18 @@ Info: Shared files should be in the `documents` path.
             this.file = fs.File.fromPath(this.path);
             this.shareFile = new ShareFile();
 
-            this.shareFile.open(
-                { 
-                    path: this.path, 
-                    intentTitle: 'Open text file with:', // optional Android
-                    rect: { // optional iPad
-                        x: 110,
-                        y: 110,
-                        width: 0,
-                        height: 0
-                    },
-                    options: true, // optional iOS
-                    animated: true // optional iOS
-                });
+            this.shareFile.open( { 
+                path: this.path, 
+                intentTitle: 'Open text file with:', // optional Android
+                rect: { // optional iPad
+                    x: 110,
+                    y: 110,
+                    width: 0,
+                    height: 0
+                },
+                options: true, // optional iOS
+                animated: true // optional iOS
+            });
         }
     }
 
