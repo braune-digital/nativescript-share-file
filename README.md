@@ -36,7 +36,15 @@ npm install nativescript-share-file
             this.shareFile.open(
                 { 
                     path: this.documents.path + this.fileName, 
-                    intentTitle: 'Open text file with:' // for Android only
+                    intentTitle: 'Open text file with:', // for Android only
+                    rect: { // positioning for iPads, iOs only
+                        x: 110,
+                        y: 110,
+                        width: 0,
+                        height: 0
+                    },
+                    options: false, // for iOS only
+                    animated: true // for iOS only
                 });
         }
     }

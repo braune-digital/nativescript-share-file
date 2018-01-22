@@ -18,11 +18,29 @@ export class ShareFile {
 
                 const controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
                 controller.delegate = new UIDocumentInteractionControllerDelegateImpl2();
-                return controller.presentOptionsMenuFromRectInViewAnimated(
-                    CGRectMake(0, 0, 0, 0),
-                    controller.delegate.documentInteractionControllerViewForPreview(controller),
-                    true
-                );
+
+                let rect;
+                if (args.rect) {
+                    rect = CGRectMake(args.rect.x ? args.rect.x : 0, args.rect.y ? args.rect.y : 0, args.rect.width ? args.rect.width : 0, args.rect.height ? args.rect.height : 0);
+                } else {
+                    rect = CGRectMake(0, 0, 0, 0);
+                }
+
+                if ( args.options ) {
+                    return controller.presentOptionsMenuFromRectInViewAnimated(
+                        rect,
+                        controller.delegate.documentInteractionControllerViewForPreview(controller),
+                        args.animated ? true : false
+                    );
+                } else {
+                    return controller.presentOpenInMenuFromRectInViewAnimated(
+                        rect,
+                        controller.delegate.documentInteractionControllerViewForPreview(controller),
+                        args.animated ? true : false
+                    );
+                }
+
+
             }
             catch (e) {
                 console.log("ShareFile: Open file failed");
