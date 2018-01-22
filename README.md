@@ -18,7 +18,7 @@ npm install nativescript-share-file
 
 ## Usage 
 
-Info: Shared files should be in the `documents` path. Android is not stable yet. 
+Info: Shared files should be in the `documents` path.
 	
 ```TypeScript
     import { ShareFile } from 'nativescript-share-file';

@@ -17,10 +17,9 @@ export class ShareFile {
           let builder = new android.os.StrictMode.VmPolicy.Builder();
           android.os.StrictMode.setVmPolicy(builder.build());
 
-          intent.setAction(android.content.Intent.ACTION_SEND);
-          intent.setType(mimeType);
+          intent.setAction(android.content.Intent.ACTION_SEND_MULTIPLE);
+          intent.setType("message/rfc822");
           intent.putParcelableArrayListExtra(android.content.Intent.EXTRA_STREAM, uris);
-
 
           application.android.currentContext.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
 
