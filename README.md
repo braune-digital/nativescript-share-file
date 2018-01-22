@@ -87,7 +87,7 @@ Show additional opening options for iOS devices.
 Default: `false`.
 
 #### animated
-Opening animation fpr iOS devices. 
+Opening animation for iOS devices. 
 
 `Boolean`: (Optional) 
 Default: `false`.
