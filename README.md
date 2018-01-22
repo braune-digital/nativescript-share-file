@@ -26,7 +26,7 @@ Info: Shared files should be in the `documents` path.
 
     export class TestClass{
 
-        shareFile: ShareFile;
+        shareFile;
         fileName;
         documents;
         path;
@@ -34,15 +34,15 @@ Info: Shared files should be in the `documents` path.
 
         constructor() {
 
-            this.fileName = 'test.txt';
+            this.fileName = 'text.txt';
             this.documents = fs.knownFolders.documents();
             this.path = fs.path.join(this.documents.path, this.fileName);
             this.file = fs.File.fromPath(this.path);
-
             this.shareFile = new ShareFile();
+
             this.shareFile.open(
                 { 
-                    path: this.documents.path + this.fileName, 
+                    path: this.path, 
                     intentTitle: 'Open text file with:', // optional Android
                     rect: { // optional iPad
                         x: 110,
@@ -50,7 +50,7 @@ Info: Shared files should be in the `documents` path.
                         width: 0,
                         height: 0
                     },
-                    options: false, // optional iOS
+                    options: true, // optional iOS
                     animated: true // optional iOS
                 });
         }

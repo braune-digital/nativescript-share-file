@@ -3,7 +3,7 @@ import { ShareFile } from 'nativescript-share-file';
 import * as fs from 'tns-core-modules/file-system';
 
 export class HelloWorldModel extends Observable {
-  private shareFile: ShareFile;
+  shareFile: ShareFile;
   fileName;
   documents;
   path;
