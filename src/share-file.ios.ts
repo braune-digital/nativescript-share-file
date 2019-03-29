@@ -12,7 +12,6 @@ export class ShareFile {
 
     private controller: UIDocumentInteractionController;
 
-
     open(args: any): boolean {
         if (args.path) {
             try {
