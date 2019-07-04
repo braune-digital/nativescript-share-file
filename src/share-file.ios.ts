@@ -10,14 +10,16 @@ export class ShareFile {
         }
     }
 
+    private controller: UIDocumentInteractionController;
+
     open(args: any): boolean {
         if (args.path) {
             try {
                 const appPath = this.getCurrentAppPath();
                 const path = args.path.replace("~", appPath);
 
-                const controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
-                controller.delegate = new UIDocumentInteractionControllerDelegateImpl2();
+                this.controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
+                this.controller.delegate = new UIDocumentInteractionControllerDelegateImpl2();
 
                 let rect;
                 if (args.rect) {
@@ -26,16 +28,16 @@ export class ShareFile {
                     rect = CGRectMake(0, 0, 0, 0);
                 }
 
-                if ( args.options ) {
-                    return controller.presentOptionsMenuFromRectInViewAnimated(
+                if (args.options) {
+                    return this.controller.presentOptionsMenuFromRectInViewAnimated(
                         rect,
-                        controller.delegate.documentInteractionControllerViewForPreview(controller),
+                        this.controller.delegate.documentInteractionControllerViewForPreview(this.controller),
                         args.animated ? true : false
                     );
                 } else {
-                    return controller.presentOpenInMenuFromRectInViewAnimated(
+                    return this.controller.presentOpenInMenuFromRectInViewAnimated(
                         rect,
-                        controller.delegate.documentInteractionControllerViewForPreview(controller),
+                        this.controller.delegate.documentInteractionControllerViewForPreview(this.controller),
                         args.animated ? true : false
                     );
                 }
