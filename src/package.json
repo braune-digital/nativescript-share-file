@@ -1,6 +1,6 @@
 {
     "name": "nativescript-share-file",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Send/share file to other apps.",
     "main": "share-file",
     "typings": "index.d.ts",
