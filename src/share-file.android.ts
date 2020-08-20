@@ -21,7 +21,7 @@ export class ShareFile {
           intent.setType("message/rfc822");
           intent.putParcelableArrayListExtra(android.content.Intent.EXTRA_STREAM, uris);
 
-          application.android.currentContext.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
+          application.android.foregroundActivity.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
 
         }
         catch (e) {
