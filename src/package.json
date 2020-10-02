@@ -1,6 +1,6 @@
 {
     "name": "nativescript-share-file",
-    "version": "1.0.6",
+    "version": "2.0.0",
     "description": "Send/share file to other apps.",
     "main": "share-file",
     "typings": "index.d.ts",
@@ -46,8 +46,8 @@
     "homepage": "https://github.com/braune-digital/nativescript-share-file",
     "readmeFilename": "README.md",
     "devDependencies": {
-        "tns-core-modules": "^3.1.0",
-        "tns-platform-declarations": "^3.1.0",
+        "tns-core-modules": "^6.5.15",
+        "tns-platform-declarations": "^6.5.15",
         "typescript": "~2.3.0",
         "prompt": "^1.0.0",
         "rimraf": "^2.5.0",
