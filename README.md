@@ -1,4 +1,4 @@
-# ⚠️ DEPRECATD⚠️
+# ⚠️ DEPRECATED⚠️
 
 Due to a lack of time, it's not possible to maintain this repository any longer.
 Please refer to the guys from finanzritter's repository who cloned it and still maintaining it:
